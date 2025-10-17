@@ -27,6 +27,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="theme-color" content={siteConfig.theme.primary} />
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <link rel="icon" href="./favicon.ico" sizes="any" />
       </head>
       <body style={vars} className="antialiased">
         <SkipLink />
