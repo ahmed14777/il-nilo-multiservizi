@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens via CSS variables for runtime theming */
+:root{
+  --color-primary:#009FC2;
+  --color-primary-light:#48C8D2;
+  --color-ink:#0f172a;
+  --color-soft:#F3F7FA;
+  --color-canvas:#ffffff;
+}
+
+body{ background:var(--color-canvas); color:var(--color-ink); }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+/* Atomic helpers wired to CSS variables */
+.link{ @apply transition-colors; color:var(--color-ink); }
+.link:hover{ color:color-mix(in oklab, var(--color-ink), white 15%); }
+
+.btn-primary{
+  @apply inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium shadow-sm focus:ring-2;
+  background:var(--color-primary); color:white;
+}
+.btn-primary:hover{ background:color-mix(in oklab, var(--color-primary), black 8%); }
+.btn-outline{
+  @apply inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium border;
+  border-color:#cbd5e1; background:white; color:var(--color-ink);
+}
+.bg-soft{ background:var(--color-soft); }
+.text-primary{ color:var(--color-primary); }
+.bg-primary-10{ background:color-mix(in oklab, var(--color-primary), white 85%); }
